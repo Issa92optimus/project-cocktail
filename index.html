@@ -6,32 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Clarion Hotel</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
 
-    <div>
-    <h2>Login</h2>
+    <nav class="navbar bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light">COCKTAIL SERVICE</a>
+
+            <ul class="navbar-nav me-auto d-flex flex-row">
+                <li class="nav-item me-2">
+                    <a class="text-light nav-link" href="#">DRINKS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-light nav-link" href="#">GLASS</a>
+                </li>
+
+            </ul>
+
+            <form class="d-flex">
+                <input class="form-control" type="text" placeholder="Search" id="search"/>
+                <button class="btn btn-outline-info ms-1" id="searchBtn">SEARCH</button>
+            </form>
+        </div>
+
+    </nav>
+   
+<div id="page1">
+    <h2>Login</h2><br>    
     <div class="login">    
-        <form id="login" method="get" action="login.php">    
-            <label><b>User Name     
-            </b>    
-            </label>    
-            <input type="text" name="Uname" id="Uname" placeholder="Username">    
-            <br><br>    
-            <label><b>Password     
-            </b>    
-            </label>    
-            <input type="Password" name="Pass" id="Pass" placeholder="Password">    
-            <br><br>    
-            <input type="button" name="log" id="log" value="Log In Here">       
-            <br><br>    
-            <input type="checkbox" id="check">    
-            <span>Remember me</span>    
-            <br><br>    
- 
-        </form>     
+    <form id="login" action="login.php">    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" name="Uname" id="Uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <br><br>    
+        <input type="button" name="log" id="log" value="Log In Here">       
+        <br><br>    
+        <input type="checkbox" id="check">    
+        <span>Remember me</span>    
+        <br><br>      
+    </form>
+</div>
+<a href="#" onclick="return show ('page1','page2');">Next page</a>
+</div>
+
+<div id="page2">
+    <div class="container mt-5" id="main-container">
+        <div class="row" id="random-cocktail">
+
+        </div>
+    </div>    
+
+
+    <div class="row mt-3" id="cocktail-drinks"hidden> 
+
+        </div>
     </div>
+
+    <div class="row mt-3" id="cocktail-glass"hidden>
+        
     </div>
-    
+
+
+    <a href="#" onclick="return show('page2','page3');">Next page</a>
+</div>
+
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
