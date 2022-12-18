@@ -7,6 +7,7 @@
     <title>The Clarion Hotel</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="file.///E:/fontawesome/css/all.css">
 </head>
 <body>
 
@@ -16,12 +17,9 @@
 
             <ul class="navbar-nav me-auto d-flex flex-row">
                 <li class="nav-item me-2">
-                    <a class="text-light nav-link" href="#">DRINKS</a>
+                    <a class="text-light nav-link" href="#" id="drink-link">DRINKS</a>
                 </li>
-                <li class="nav-item">
-                    <a class="text-light nav-link" href="#">GLASS</a>
-                </li>
-
+                
             </ul>
 
             <form class="d-flex">
@@ -31,8 +29,7 @@
         </div>
 
     </nav>
-   
-<div id="page1">
+
     <h2>Login</h2><br>    
     <div class="login">    
     <form id="login" action="login.php">    
@@ -53,31 +50,45 @@
         <br><br>      
     </form>
 </div>
-<a href="#" onclick="return show ('page1','page2');">Next page</a>
+
+<div class="container mt-5" id="main-container">
+    <div class="row" id="random-cocktail">
+
+    </div>
+   
+
+
+<div class="row mt-3" id="cocktail-drinks"hidden> 
+    <button>Order</button>
+    </div>
+
 </div>
 
-<div id="page2">
-    <div class="container mt-5" id="main-container">
-        <div class="row" id="random-cocktail">
-
-        </div>
-    </div>    
-
-
-    <div class="row mt-3" id="cocktail-drinks"hidden> 
-
-        </div>
+<div class="card">
+    <div class="star-widget">
+        <input type="radio" name="rate" id="rate-5">
+        <label for="rate-5" ></label>
+        <input type="radio" name="rate" id="rate-4">
+        <label for="rate-4" ></label>
+        <input type="radio" name="rate" id="rate-3">
+        <label for="rate-3" ></label>
+        <input type="radio" name="rate" id="rate-2">
+        <label for="rate-2" ></label>
+        <input type="radio" name="rate" id="rate-1">
+        <label for="rate-1" ></label>
+        <form action="#">
+            <div class="textarea">
+                <textarea cols="30" placeholder="Describe your experience.."></textarea>
+            </div>
+            <div class="btn">
+                <button type="submit">Post</button>
+            </div>
+        </form>
     </div>
-
-    <div class="row mt-3" id="cocktail-glass"hidden>
-        
-    </div>
-
-
-    <a href="#" onclick="return show('page2','page3');">Next page</a>
 </div>
 
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+
 </body>
 </html>

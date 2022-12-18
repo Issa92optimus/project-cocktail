@@ -1,8 +1,23 @@
 const random_cocktail = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 const drinks = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink'
 
+
 document.addEventListener("DOMContentLoaded",() => {
     
+    const randomCocktailRow = document.getElementById('random-cocktail')
+    const cocktaildrinksRow = document.getElementById('cocktail-drinks')
+
+    const drinkLink = document.getElementById('drink-link')
+
+    drinkLink.addEventListener('click',() => {
+        randomCocktailRow.style.display = "none"
+        cocktaildrinksRow.style.display = "none"
+
+        cocktaildrinksRow.removeAttribute('hidden')
+        cocktaildrinksRow.style.display = "flex"
+    })
+
+
     const createRandomcocktail = (image, name, description) => {
         const cardDiv = document.createElement('div')
         cardDiv.classList.add('card', 'col-12')
@@ -68,20 +83,28 @@ document.addEventListener("DOMContentLoaded",() => {
             const description = cocktailData.strInstructions
             const image = cocktailData.strDrinkThumb
             const cocktailElement = createRandomcocktail(image,name,description)
-            document.getElementById('random-cocktail').appendChild(cocktailElement)
+            randomCocktailRow.appendChild(cocktailElement)
         })
     }
 
     const loadDrinks = () => {
         fetch(drinks) 
         .then((resp) => resp.json())
-        .then((data) => {
+        .then((data) => {      
             const drinksData = data.drinks
             const drinkElements = drinksData.map(
                 drnk => createDrink(drnk.strDrinkThumb, drnk.strDrink)
             )
-            document.getElementById('cocktail-drinks').append(...drinkElements)
+            cocktaildrinksRow.append(...drinkElements)
         })
+
+        const btn = document.querySelector("button");
+        const editBtn = document.querySelector(".edit");
+            editBtn.onclick = () => {
+                widget.style.display = "none";
+                post.style.display = "block";
+            return false;
+    }
     }
 
     loadrandomcocktail()
